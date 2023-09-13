@@ -64,13 +64,13 @@ class BlogApp extends LitElement {
     super();
     this.header = 'Nuevo valor default'; // await
     this.showButton = true;
-    this.posts = [
-      { title: "Test 1", author: "Franco Frizzo", content: "Contenido 1", highlighted: false },
-      { title: "Test 2", content: "Contenido 2", highlighted: false },
-      { title: "Test 3", author: "Franco Frizzo", content: "Contenido 3", highlighted: false },
-    ] 
+    this.posts = [];
   }
 
+  async connectedCallback() {
+    this.post = await PostService.getPosts();
+  }
+  
   updated() {
     console.log("Cambio el titulo")
   }
