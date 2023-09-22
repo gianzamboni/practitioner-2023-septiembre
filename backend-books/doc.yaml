@@ -1,0 +1,48 @@
+title: Books API
+version: 1.0.0
+description: Books API for mananging books in library
+
+type:
+  Book: 
+    properties:
+      id: integer
+      title: string
+      author: integer
+      takenBy: integer | null
+
+  Author:
+    properties:
+      id: integer
+      name: string
+      country: string
+      
+  Member:
+    properties:
+      id: integer
+      name: string
+      address: string
+      takenBooks: [integer]
+    
+
+paths:
+  books/:
+    get: ...
+    post: ...
+    /{id}:
+      put:
+        body:
+          properties:
+            takenBy: integer | null
+        responses:
+          200:
+            body:
+              properties:
+                schema: Book
+          400: 
+            body:
+              properties:
+                error: string
+          500: ...
+  authors/: ...
+   
+  members/: ...

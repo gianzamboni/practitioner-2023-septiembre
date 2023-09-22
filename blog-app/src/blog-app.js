@@ -5,7 +5,7 @@ import { BlogPost } from './components/blog-post.js';
 const example = {
   title: 'Creando nuestros componentes con LitElement',
   author: 'Franco Frizzo',
-  date: new Date(),
+                  date: new ,
   content: 'Contenido del post…',
   categories: ['Desarrollo web', 'LitElement'],
   highlighted: true,
